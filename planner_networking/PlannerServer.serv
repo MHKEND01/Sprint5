@@ -8,131 +8,22 @@
      <void id="ConcurrentHashMap1" property="planFileMap">
       <void id="PlanFile0" method="get">
        <string>2019</string>
-       <void property="canEdit">
-        <boolean>false</boolean>
+       <void id="Centre0" property="plan">
+        <void id="Node0" property="root">
+         <void id="ArrayList0" property="children">
+          <void id="Node1" index="0">
+           <void property="comments">
+            <void method="add">
+             <string>user: We need a goal</string>
+            </void>
+           </void>
+          </void>
+         </void>
+        </void>
        </void>
-       <void property="plan">
-        <void property="name">
-         <string>Centre_Plan_2</string>
-        </void>
-       </void>
-      </void>
-      <void method="put">
-       <string>2016</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre">
-          <void property="name">
-           <string>Centre_Plan_1</string>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2016</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>20191</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre0">
-          <void property="name">
-           <string>Centre_Plan_1</string>
-          </void>
-          <void property="root">
-           <void property="data">
-            <string>1</string>
-           </void>
-           <void property="name">
-            <string>Mission1</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>20191</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>20190</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre1">
-          <void property="name">
-           <string>Centre_Plan_1</string>
-          </void>
-          <void property="root">
-           <void property="data">
-            <string>mission edit</string>
-           </void>
-           <void property="name">
-            <string>Mission name field edit</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>20190</string>
-        </void>
-       </object>
       </void>
      </void>
     </void>
-   </void>
-   <void method="put">
-    <string>v&gt;yY1*UkogEZr.d&lt;9CkgqL/FW</string>
-    <object class="software_masters.planner_networking.Account" id="Account1">
-     <void property="cookie">
-      <string>v&gt;yY1*UkogEZr.d&lt;9CkgqL/FW</string>
-     </void>
-     <void property="department">
-      <object idref="Department0"/>
-     </void>
-     <void property="password">
-      <string>newUser</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>@Rbdu9vy_c)jkqL%&apos;%A!TDFj-</string>
-    <object class="software_masters.planner_networking.Account" id="Account2">
-     <void property="cookie">
-      <string>@Rbdu9vy_c)jkqL%&apos;%A!TDFj-</string>
-     </void>
-     <void property="department">
-      <object class="software_masters.planner_networking.Department" id="Department1"/>
-     </void>
-     <void property="password">
-      <string>testDepartment</string>
-     </void>
-    </object>
-   </void>
-  </void>
-  <void property="departmentMap">
-   <void method="put">
-    <string>newDepartment</string>
-    <object idref="Department1"/>
-   </void>
-  </void>
-  <void property="loginMap">
-   <void method="put">
-    <string>newUser</string>
-    <object idref="Account1"/>
-   </void>
-   <void method="put">
-    <string>testDepartment</string>
-    <object idref="Account2"/>
    </void>
   </void>
  </object>
