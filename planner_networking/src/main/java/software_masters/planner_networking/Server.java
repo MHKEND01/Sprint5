@@ -167,4 +167,11 @@ public interface Server extends Remote
 	 *             department
 	 */
 	Collection<PlanFile> listPlans(String cookie) throws RemoteException;
+	
+	/**
+	 * @return current user's username
+	 * @throws RemoteException
+	 */
+	String getUsername(String cookie) throws RemoteException;
+	
 }

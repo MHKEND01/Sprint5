@@ -296,5 +296,30 @@ public class Client
 	{
 		this.server = server;
 	}
+	
+	/**
+	 * Concatenates username with entered comment, adds comment to currently accessed node.
+	 * @param comment
+	 */
+	public void addComment(String comment)
+	{
+		String username = "";
+		try {
+			username = server.getUsername(cookie);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		comment = username + ": " + comment;
+		this.currNode.addComment(comment);
+	}
+	
+	/**
+	 * Removes comment from currently accessed node
+	 * @param comment
+	 */
+	public void removeComment(String comment)
+	{
+		this.currNode.removeComment(comment);
+	}
 
 }

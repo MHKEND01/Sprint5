@@ -40,8 +40,8 @@ public class ServerImplementation implements Server
 		Department dpt = new Department();
 		this.departmentMap.put("default", dpt);
 
-		Account admin = new Account("admin", "0", dpt, true);
-		Account user = new Account("user", "1", dpt, false);
+		Account admin = new Account("admin", "admin", "0", dpt, true);
+		Account user = new Account("user", "user", "1", dpt, false);
 		this.loginMap.put("admin", admin);
 		this.loginMap.put("user", user);
 		this.cookieMap.put("0", admin);
@@ -167,7 +167,7 @@ public class ServerImplementation implements Server
 
 		String newCookie = cookieMaker();
 		Department newDept = this.departmentMap.get(departmentName);
-		Account newAccount = new Account(password, newCookie, newDept, isAdmin);
+		Account newAccount = new Account(username, password, newCookie, newDept, isAdmin);
 		this.loginMap.put(username, newAccount);
 		this.cookieMap.put(newAccount.getCookie(), newAccount);
 
@@ -596,4 +596,13 @@ public class ServerImplementation implements Server
 	{
 		ServerImplementation.spawn();
 	}
+	
+	/* (non-Javadoc)
+	 * @see software_masters.planner_networking.Server#getUsername(java.lang.String)
+	 */
+	public String getUsername(String cookie)
+	{
+		return this.cookieMap.get(cookie).getUserName();
+	}
+
 }

@@ -4,15 +4,19 @@ import java.rmi.RemoteException;
 import java.util.Optional;
 
 import application.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.Alert.AlertType;
 import software_masters.model.PlannerModel;
 import software_masters.planner_networking.Node;
+import software_masters.planner_networking.PlanFile;
 
 public class PlanEditViewController
 {
@@ -27,6 +31,10 @@ public class PlanEditViewController
 	TextField dataField;
 	@FXML
 	TextField yearField;
+	@FXML
+	TextField commentField;
+	@FXML
+	ListView<String> commentListView;
 
 	boolean isPushed;
 
@@ -41,6 +49,7 @@ public class PlanEditViewController
 		model = this.application.getModel();
 		setTreeView();
 		isPushed = true;
+		genComments();
 	}
 
 	/**
@@ -225,12 +234,50 @@ public class PlanEditViewController
 		nameField.setText(model.getCurrNode().getName());
 		dataField.setText(model.getCurrNode().getData());
 		treeView.refresh();
+		
+		commentField.clear();
+		genComments();
 
 		if (isChanged)
 		{
 			isPushed = false;
 		}
 
+	}
+	
+	/**
+	 * Adds a comment to the currently accessed node's list of comments
+	 */
+	@FXML
+	public void addComment()
+	{
+		String comment = commentField.getText();
+		model.addComment(comment);
+		genComments();
+		commentField.clear();
+		isPushed = false;
+	}
+	
+	/**
+	 *Removes the comment currently selected in the listview of comments
+	 */
+	@FXML
+	public void removeComment()
+	{
+		String comment = commentListView.getSelectionModel().getSelectedItem();
+		model.removeComment(comment);
+		genComments();
+		isPushed = false;
+	}
+	
+	/**
+	 * Generates the listview of comments for the currently accessed section
+	 */
+	public void genComments()
+	{
+		ObservableList<String> items = null;
+		items = FXCollections.observableArrayList(model.getCurrNode().getComments());
+		commentListView.setItems(items);
 	}
 
 	/**

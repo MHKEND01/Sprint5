@@ -11,9 +11,11 @@ public class Account
 {
 
 	/**
-	 * Object keeps track of each user's password, cookie, department, and admin
+	 * Object keeps track of each user's username, password, cookie, department, and admin
 	 * state.
 	 */
+	
+	private String userName;
 	private String password;
 	private String cookie;
 	private Department department;
@@ -36,8 +38,9 @@ public class Account
 	 * @param department
 	 * @param isAdmin
 	 */
-	public Account(String password, String cookie, Department department, boolean isAdmin)
+	public Account(String username, String password, String cookie, Department department, boolean isAdmin)
 	{
+		this.userName = username;
 		this.password = password;
 		this.cookie = cookie;
 		this.department = department;
@@ -172,5 +175,15 @@ public class Account
 				return false;
 		return true;
 	}
+
+	/**
+	 * @return the userName
+	 */
+	public String getUserName() { return userName; }
+
+	/**
+	 * @param userName the userName to set
+	 */
+	public void setUserName(String userName) { this.userName = userName; }
 
 }

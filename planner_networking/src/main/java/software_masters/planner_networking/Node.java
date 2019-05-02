@@ -1,6 +1,7 @@
 package software_masters.planner_networking;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 
@@ -15,6 +16,7 @@ public class Node implements Serializable {
 	private String name;
 	private String data;
 	private ArrayList<Node> children = new ArrayList<Node>();
+	private LinkedList<String> comments = new LinkedList<String>();
 
 	/**
 	 * Takes a Node parent, String name, String data, and list of children Sets
@@ -150,5 +152,25 @@ public class Node implements Serializable {
 		}
 		return true;
 	}
+
+	/**
+	 * @return the comments
+	 */
+	public LinkedList<String> getComments() { return comments; }
+
+	/**
+	 * @param comments the comments to set
+	 */
+	public void setComments(LinkedList<String> comments) { this.comments = comments; }
+	
+	/**
+	 * @param comment
+	 */
+	public void addComment(String comment) { comments.add(comment); }
+	
+	/**
+	 * @param comment
+	 */
+	public void removeComment(String comment) { comments.remove(comment);}
 
 }
