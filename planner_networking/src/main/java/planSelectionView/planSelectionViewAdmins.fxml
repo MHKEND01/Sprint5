@@ -46,7 +46,7 @@
             <Separator prefHeight="0.0" prefWidth="252.0" />
             <Label id="selectPlanLabel" prefHeight="25.0" prefWidth="113.0" text="Select Plan" />
             <Separator prefHeight="0.0" prefWidth="31.0" HBox.hgrow="ALWAYS" />
-            <Button id="markEditablePlansButton" fx:id="markEditablePlansButton" mnemonicParsing="false" onAction="#openMarkPlans" prefHeight="26.0" prefWidth="172.0" text="Mark Editable Plans" />
+            <Button id="markEditablePlansButton" fx:id="markEditablePlansButton" mnemonicParsing="false" onAction="#openMarkEditablePlans" prefHeight="26.0" prefWidth="172.0" text="Mark Editable Plans" />
             <Button id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="78.0" text="Logout" />
          </children>
       </HBox>

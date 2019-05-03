@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="295.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="markEditablePlansView.MarkEditablePlansController">
+   <bottom>
+      <HBox prefHeight="46.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Button id="markEditableButton" fx:id="markEditableButton" mnemonicParsing="false" onAction="#markAsEditable" prefHeight="26.0" prefWidth="280.0" text="Mark as Editable" />
+            <Separator prefWidth="200.0" />
+            <Button id="markReadOnlyButton" fx:id="markReadOnlyButton" mnemonicParsing="false" onAction="#markAsReadOnly" prefHeight="26.0" prefWidth="280.0" text="Mark as Read-only" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="30.0" prefWidth="514.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefHeight="3.0" prefWidth="345.0" />
+            <Button id="backToPlansButton" fx:id="backToPlansButton" mnemonicParsing="false" onAction="#backToPlans" text="Back to plans" />
+            <Button id="logoutButton" fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ListView id="markEditablePlansList" fx:id="departmentPlanList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <Label text="Select a plan, then mark it as editable or read-only" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

@@ -13,9 +13,12 @@ import javafx.fxml.FXML;
  */
 public class PlanSelectionControllerAdminOnly extends PlanSelectionViewController {
 	
+	/**
+	 * Opens the markEditablePlans view for admins.
+	 */
 	@FXML
-	public void openMarkPlans(){
-		System.out.println("I DID IT");
+	public void openMarkEditablePlans(){
+		app.showMarkEditablePlansView();
 	}
 
 }

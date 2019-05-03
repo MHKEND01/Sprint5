@@ -23,7 +23,7 @@ public class PlanSelectionViewController
 	@FXML
 	private ListView<PlanFile> departmentPlanList;
 
-	private Main app;
+	protected Main app;
 
 	/**
 	 * Resets client's cookie and planFile, displays the login window
@@ -78,7 +78,7 @@ public class PlanSelectionViewController
 	}
 
 	/**
-	 * This method generates a list view of plans associated with client department
+	 * This method generates a list view of plans associated with the user's department
 	 * 
 	 * @return
 	 */

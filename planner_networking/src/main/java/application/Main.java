@@ -15,6 +15,7 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import loginView.LoginViewController;
+import markEditablePlansView.MarkEditablePlansController;
 import planEditView.PlanEditViewController;
 import planReadOnlyView.PlanReadOnlyViewController;
 import planSelectionView.PlanSelectionViewController;
@@ -222,6 +223,37 @@ public class Main extends Application
 		primaryStage.setScene(s);
 		primaryStage.show();
 		primaryStage.sizeToScene();
+	}
+	
+	/**
+	 * Shows the mark editable plans view for admins.
+	 */
+	public void showMarkEditablePlansView()
+	{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../markEditablePlansView/markEditablePlansView.fxml"));
+
+		try
+		{
+			mainView = loader.load();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		MarkEditablePlansController cont = loader.getController();
+		cont.setApplication(this);
+
+		primaryStage.setOnCloseRequest((WindowEvent e) ->
+		{
+			primaryStage.close();
+
+		});
+
+		Scene s = new Scene(mainView);
+		primaryStage.setScene(s);
+		primaryStage.sizeToScene();
+		primaryStage.show();
 	}
 
 	/**

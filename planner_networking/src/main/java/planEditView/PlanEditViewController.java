@@ -141,8 +141,6 @@ public class PlanEditViewController
 	@FXML
 	public void backToPlans()
 	{
-		// need to ask users if they want to push
-
 		this.changeSection();
 		if (this.isPushed)
 		{

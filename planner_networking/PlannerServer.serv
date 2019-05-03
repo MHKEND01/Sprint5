@@ -8,7 +8,13 @@
      <void id="ConcurrentHashMap1" property="planFileMap">
       <void id="PlanFile0" method="get">
        <string>2019</string>
+       <void property="canEdit">
+        <boolean>false</boolean>
+       </void>
        <void id="Centre0" property="plan">
+        <void property="name">
+         <string>Centre_Plan_2</string>
+        </void>
         <void id="Node0" property="root">
          <void id="ArrayList0" property="children">
           <void id="Node1" index="0">
@@ -22,8 +28,119 @@
         </void>
        </void>
       </void>
+      <void method="put">
+       <string>2016</string>
+       <object class="software_masters.planner_networking.PlanFile">
+        <void property="canEdit">
+         <boolean>true</boolean>
+        </void>
+        <void property="plan">
+         <object class="software_masters.planner_networking.Centre">
+          <void property="name">
+           <string>Centre_Plan_1</string>
+          </void>
+         </object>
+        </void>
+        <void property="year">
+         <string>2016</string>
+        </void>
+       </object>
+      </void>
+      <void method="put">
+       <string>20191</string>
+       <object class="software_masters.planner_networking.PlanFile">
+        <void property="canEdit">
+         <boolean>true</boolean>
+        </void>
+        <void property="plan">
+         <object class="software_masters.planner_networking.Centre" id="Centre1">
+          <void property="name">
+           <string>Centre_Plan_1</string>
+          </void>
+          <void property="root">
+           <void property="data">
+            <string>1</string>
+           </void>
+           <void property="name">
+            <string>Mission1</string>
+           </void>
+          </void>
+         </object>
+        </void>
+        <void property="year">
+         <string>20191</string>
+        </void>
+       </object>
+      </void>
+      <void method="put">
+       <string>20190</string>
+       <object class="software_masters.planner_networking.PlanFile">
+        <void property="canEdit">
+         <boolean>true</boolean>
+        </void>
+        <void property="plan">
+         <object class="software_masters.planner_networking.Centre" id="Centre2">
+          <void property="name">
+           <string>Centre_Plan_1</string>
+          </void>
+          <void property="root">
+           <void property="data">
+            <string>mission edit</string>
+           </void>
+           <void property="name">
+            <string>Mission name field edit</string>
+           </void>
+          </void>
+         </object>
+        </void>
+        <void property="year">
+         <string>20190</string>
+        </void>
+       </object>
+      </void>
      </void>
     </void>
+   </void>
+   <void method="put">
+    <string>I+oBakQtjB\q&gt;drR:q0TkAuJo</string>
+    <object class="software_masters.planner_networking.Account" id="Account1">
+     <void property="cookie">
+      <string>I+oBakQtjB\q&gt;drR:q0TkAuJo</string>
+     </void>
+     <void property="password">
+      <string>testDepartment</string>
+     </void>
+     <void property="userName">
+      <string>testDepartment</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>p8.9?iuJpT!w#)i]d,0oED[O?</string>
+    <object class="software_masters.planner_networking.Account" id="Account2">
+     <void property="cookie">
+      <string>p8.9?iuJpT!w#)i]d,0oED[O?</string>
+     </void>
+     <void property="department">
+      <object idref="Department0"/>
+     </void>
+     <void property="password">
+      <string>newUser</string>
+     </void>
+     <void property="userName">
+      <string>newUser</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="loginMap">
+   <void method="put">
+    <string>newUser</string>
+    <object idref="Account2"/>
+   </void>
+   <void method="put">
+    <string>testDepartment</string>
+    <object idref="Account1"/>
    </void>
   </void>
  </object>

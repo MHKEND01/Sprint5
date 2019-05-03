@@ -41,6 +41,7 @@ public class Client
 	public Client(Server server)
 	{
 		this.server = server;
+		this.state = new User(this);
 	}
 
 	/**
@@ -353,5 +354,19 @@ public class Client
 	 * @param state the state to set
 	 */
 	public void setState(AdminState state) { this.state = state; }
+	
+	/**
+	 * Retrieves name of the current user's department
+	 * @return name of user's department
+	 */
+	public String getUserDepartment()
+	{
+		try {
+			return server.getUserDepartment(cookie);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }

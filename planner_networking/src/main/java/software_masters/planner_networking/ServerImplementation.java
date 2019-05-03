@@ -37,7 +37,7 @@ public class ServerImplementation implements Server
 	 */
 	public ServerImplementation() throws RemoteException
 	{
-		Department dpt = new Department();
+		Department dpt = new Department("default");
 		this.departmentMap.put("default", dpt);
 
 		Account admin = new Account("admin", "admin", "0", dpt, true);
@@ -239,7 +239,7 @@ public class ServerImplementation implements Server
 		cookieChecker(cookie);// checks that cookie is valid and that user is admin
 		adminChecker(cookie);
 
-		this.departmentMap.put(departmentName, new Department());
+		this.departmentMap.put(departmentName, new Department(departmentName));
 
 	}
 
@@ -465,6 +465,19 @@ public class ServerImplementation implements Server
 		}
 		collections = (Collection<PlanFile>) list;
 		return collections;
+	}
+	
+	/**
+	 * Retrieves the department name of the user
+	 * 
+	 * @param cookie
+	 * @return department name of user
+	 */
+	public String getUserDepartment(String cookie)
+	{
+		Account user = this.getCookieMap().get(cookie);
+		Department department = user.getDepartment();
+		return department.getDepartmentName();
 	}
 
 	/*

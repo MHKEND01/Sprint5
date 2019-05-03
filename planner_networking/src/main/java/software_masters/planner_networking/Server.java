@@ -181,4 +181,13 @@ public interface Server extends Remote
 	 */
 	boolean adminCheckerReturn(String cookie) throws RemoteException;
 	
+	/**
+	 * Retrieves the department name of the user
+	 * 
+	 * @param cookie
+	 * @return department name of user
+	 * @throws RemoteException
+	 */
+	public String getUserDepartment(String cookie)throws RemoteException;
+	
 }
