@@ -174,4 +174,11 @@ public interface Server extends Remote
 	 */
 	String getUsername(String cookie) throws RemoteException;
 	
+	/**
+	 * Checks that the user is an admin, can return the state to the client
+	 * @param cookie
+	 * @throws RemoteException
+	 */
+	boolean adminCheckerReturn(String cookie) throws RemoteException;
+	
 }

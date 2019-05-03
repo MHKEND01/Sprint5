@@ -22,6 +22,7 @@ public class Client
 	private PlanFile currPlanFile;
 	private Node currNode;
 	private Server server;
+	private AdminState state;
 
 	/**
 	 * Default constructor.
@@ -29,6 +30,7 @@ public class Client
 	public Client()
 	{
 		this.server = null;
+		this.state = new User(this);
 	}
 
 	/**
@@ -68,6 +70,26 @@ public class Client
 		this.currPlanFile = null;
 		this.currNode = null;
 		this.cookie = server.logIn(username, password);
+		
+		if(server.adminCheckerReturn(this.cookie))
+		{
+			state.changeState();
+		}	
+	}
+	
+	/**Logs out: sets cookie, currently accessed node, and currently accessed planfile to null
+	 * @throws RemoteException
+	 */
+	public void logout() throws RemoteException
+	{
+		if(server.adminCheckerReturn(cookie))
+		{
+			state.changeState();
+		}	
+		
+		setCookie(null);
+		setCurrNode(null);
+		setCurrPlanFile(null);
 	}
 
 	/**
@@ -321,5 +343,15 @@ public class Client
 	{
 		this.currNode.removeComment(comment);
 	}
+
+	/**
+	 * @return the state
+	 */
+	public AdminState getState() { return state; }
+
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(AdminState state) { this.state = state; }
 
 }

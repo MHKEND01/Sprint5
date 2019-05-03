@@ -4,34 +4,34 @@
 package software_masters.planner_networking;
 
 /**
- * AdminState for regular users 
+ * AdminState for users with admin privileges 
+ * 
  * @author lee.kendall
  *
  */
-public class User implements AdminState {
-	
+public class Admin implements AdminState {
+
 	private Client client;
 	
-	
-	public User(Client client)
+	public Admin(Client client)
 	{
 		this.client = client;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see software_masters.planner_networking.AdminState#getViewPath()
 	 */
 	@Override
 	public String getViewPath() {
-		return "../planSelectionView/planSelectionView.fxml";
+		return "../planSelectionView/planSelectionViewAdmins.fxml";
 	}
 	
 	/**
-	 * Changes client's state to admin when an admin account logs in
+	 * Changes client's state from admin to user when admins logout.
 	 */
 	public void changeState()
 	{
-		AdminState state = new Admin(client);
+		AdminState state = new User(client);
 		client.setState(state);
 	}
 

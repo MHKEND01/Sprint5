@@ -120,12 +120,15 @@ public class Main extends Application
 	}
 
 	/**
-	 * Shows the plan selection view
+	 * Shows the plan selection view. Which version is loaded depends on the implementation of the AdminState
+	 * is held by the client.
 	 */
 	public void showPlanSelectionView()
 	{
+		String viewPath = model.getState().getViewPath();
+		
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("../planSelectionView/planSelectionView.fxml"));
+		loader.setLocation(Main.class.getResource(viewPath));
 
 		try
 		{

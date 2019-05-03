@@ -46,12 +46,11 @@ public class PlanReadOnlyViewController
 	@FXML
 	public void logOut()
 	{
-		// need to ask users if they want to push
-
-		model.setCookie(null);
-		model.setCurrNode(null);
-		model.setCurrPlanFile(null);
-
+		try {
+			application.getModel().logout();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		application.showLoginView();
 	}
 

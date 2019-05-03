@@ -122,9 +122,11 @@ public class PlanEditViewController
 		this.changeSection();
 		if (this.isPushed)
 		{
-			model.setCookie(null);
-			model.setCurrNode(null);
-			model.setCurrPlanFile(null);
+			try {
+				application.getModel().logout();
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
 			application.showLoginView();
 		}
 		else

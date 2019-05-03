@@ -320,6 +320,16 @@ public class ServerImplementation implements Server
 			throw new IllegalArgumentException("You're not an admin");
 		}
 	}
+	
+	/**
+	 * Checks that the user is an admin, can return the state to the client
+	 * @param cookie
+	 * @throws RemoteException
+	 */
+	public boolean adminCheckerReturn(String cookie)
+	{
+		return this.cookieMap.get(cookie).isAdmin();
+	}
 
 	/**
 	 * Checks department is valid

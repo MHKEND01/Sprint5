@@ -17,5 +17,10 @@ public interface AdminState {
 	 * @return filepath to the correct planEditView
 	 */
 	public abstract String getViewPath();
+	
+	/**
+	 * Changes client's state to admin when an admin account logs in
+	 */
+	public void changeState();
 
 }

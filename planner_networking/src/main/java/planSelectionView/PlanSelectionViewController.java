@@ -34,9 +34,11 @@ public class PlanSelectionViewController
 	@FXML
 	public void Logout(ActionEvent event)
 	{
-		app.getModel().setCookie(null);
-		app.getModel().setCurrNode(null);
-		app.getModel().setCurrPlanFile(null);
+		try {
+			app.getModel().logout();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		app.showLoginView();
 	}
 
