@@ -34,7 +34,7 @@
             <ListView id="markEditablePlansList" fx:id="departmentPlanList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <Label text="Select a plan, then mark it as editable or read-only" BorderPane.alignment="CENTER" />
+            <Label id="instructionsLabel" fx:id="instructionsLabel" text="Select a plan, then mark it as editable or read-only" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
    </center>

@@ -95,24 +95,7 @@ class CommentsTest extends GuiTestBase {
 	{
 		clickOn("#logoutButton");
 		clickOn("Yes");
-		clickOn("#usernameField");
-		for(int i = 0; i<4; i++)
-		{
-			press(KeyCode.BACK_SPACE);
-			release(new KeyCode[] {});	
-		}
-		
-		write("admin");
-		
-		clickOn("#passwordField");
-		for(int i = 0; i<4; i++)
-		{
-			press(KeyCode.BACK_SPACE);
-			release(new KeyCode[] {});	
-		}
-		write("admin");
-		
-		clickOn("#loginButton");
+		loginAsAdmin();
 		clickOn("2019");
 		//Verifies users can see comments left by other users
 		FxAssert.verifyThat("#commentListView", ListViewMatchers.hasListCell("user: I have an idea"));
@@ -160,6 +143,31 @@ class CommentsTest extends GuiTestBase {
 		//comment, the comment not intended for deletion.
 		FxAssert.verifyThat("#commentListView", ListViewMatchers.hasListCell("user: I have another idea"));
 		FxAssert.verifyThat("#commentListView", ListViewMatchers.hasItems(1));
+	}
+	
+	/**
+	 * Helper method to login as an admin
+	 */
+	private void loginAsAdmin()
+	{
+		clickOn("#usernameField");
+		for(int i = 0; i<4; i++)
+		{
+			press(KeyCode.BACK_SPACE);
+			release(new KeyCode[] {});	
+		}
+		
+		write("admin");
+		
+		clickOn("#passwordField");
+		for(int i = 0; i<4; i++)
+		{
+			press(KeyCode.BACK_SPACE);
+			release(new KeyCode[] {});	
+		}
+		write("admin");
+		
+		clickOn("#loginButton");
 	}
 	
 	
