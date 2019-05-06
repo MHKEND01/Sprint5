@@ -83,8 +83,8 @@ public class PlanReadOnlyComparisonViewController extends PlanReadOnlyViewContro
 	
 			}
 			
-			if(viewedNode.getData()!=comparedNode.getData() 
-					|| viewedNode.getName() != comparedNode.getName())
+			if(!viewedNode.getData().contentEquals(comparedNode.getData()) 
+					|| !viewedNode.getName().contentEquals(comparedNode.getName()))
 			{
 				changedNodes.add(viewedNode); //Different data content or names
 			}
@@ -109,7 +109,7 @@ public class PlanReadOnlyComparisonViewController extends PlanReadOnlyViewContro
 	 */
 	private void setComparisonLabel()
 	{
-		if(changedNodes.contains(model.getCurrNode()))
+		if(differenceDetected(model.getCurrNode()))
 		{
 			comparisonLabel.setText("There is at least one difference between this node and the"
 					+ " corresponding node on the compared plan. This could be a difference in either"
@@ -122,6 +122,28 @@ public class PlanReadOnlyComparisonViewController extends PlanReadOnlyViewContro
 			comparisonLabel.setStyle("-fx-color: Green");
 			
 		}
+	}
+	
+	/**
+	 * Serves as a substitute for the arrayLis ".contains()" method, which compares nodes using the
+	 * deafult ".equals()" method. This always returns false because the compared node references are
+	 * not pointing at the same object. The custom "testEquals()" method, originally used for testing,
+	 * actually compares the contents of each node. Substituting that method for the default equals()
+	 * method returns the intended result.
+	 * @param currNode
+	 * @return
+	 */
+	private boolean differenceDetected(Node currNode)
+	{
+		for(int i=0; i<changedNodes.size();i++)
+		{
+			if(changedNodes.get(i).testEquals(currNode))
+			{
+				return true;
+			}
+		}
+		return false;
+		
 	}
 	
 	/**

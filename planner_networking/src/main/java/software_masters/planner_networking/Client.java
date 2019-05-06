@@ -106,6 +106,15 @@ public class Client
 		this.currPlanFile = server.getPlan(year, this.cookie);
 		this.currNode = this.currPlanFile.getPlan().getRoot();
 	}
+	
+	/**
+	 * Retreives the desired planfile without assigning it to currPlanFile. Useful for the
+	 * comparison algorithm of the planComparisonSelectionView.
+	 */
+	public PlanFile returnPlan(String year) throws IllegalArgumentException, RemoteException
+	{
+		return server.getPlan(year, cookie);
+	}
 
 	/**
 	 * Returns a blank plan outline given a name. Throws exception if the plan

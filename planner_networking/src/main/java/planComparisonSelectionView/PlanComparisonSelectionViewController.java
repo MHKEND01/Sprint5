@@ -104,7 +104,13 @@ public class PlanComparisonSelectionViewController {
 	{
 		PlanFile viewedPlan = listViewOne.getSelectionModel().getSelectedItem();
 		PlanFile comparedPlan = listViewTwo.getSelectionModel().getSelectedItem();
-		app.getModel().setCurrPlanFile(viewedPlan);
+		try {
+			app.getModel().getPlan(viewedPlan.getYear());
+			viewedPlan = app.getModel().returnPlan(viewedPlan.getYear());
+			comparedPlan = app.getModel().returnPlan(comparedPlan.getYear());
+		} catch (IllegalArgumentException | RemoteException e) {
+			e.printStackTrace();
+		}
 		app.showPlanReadOnlyComparisonView(viewedPlan, comparedPlan);
 
 	}
