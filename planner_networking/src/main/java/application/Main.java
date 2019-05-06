@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import loginView.LoginViewController;
 import markEditablePlansView.MarkEditablePlansController;
+import planComparisonSelectionView.PlanComparisonSelectionViewController;
 import planEditView.PlanEditViewController;
 import planReadOnlyView.PlanReadOnlyViewController;
 import planSelectionView.PlanSelectionViewController;
@@ -242,6 +243,37 @@ public class Main extends Application
 			e.printStackTrace();
 		}
 		MarkEditablePlansController cont = loader.getController();
+		cont.setApplication(this);
+
+		primaryStage.setOnCloseRequest((WindowEvent e) ->
+		{
+			primaryStage.close();
+
+		});
+
+		Scene s = new Scene(mainView);
+		primaryStage.setScene(s);
+		primaryStage.sizeToScene();
+		primaryStage.show();
+	}
+	
+	/**
+	 * Displays the planComparisonSelectionView
+	 */
+	public void showPlanComparisonSelectionView()
+	{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../planComparisonSelectionView/PlanComparisonSelectionView.fxml"));
+
+		try
+		{
+			mainView = loader.load();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		PlanComparisonSelectionViewController cont = loader.getController();
 		cont.setApplication(this);
 
 		primaryStage.setOnCloseRequest((WindowEvent e) ->

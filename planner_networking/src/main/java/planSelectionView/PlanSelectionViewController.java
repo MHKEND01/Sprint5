@@ -157,5 +157,14 @@ public class PlanSelectionViewController
 			return;
 		}
 	}
+	
+	/**
+	 * Opens the plan comparison selection view.
+	 */
+	@FXML
+	public void openPlanComparisonSelectionView()
+	{
+		this.app.showPlanComparisonSelectionView();
+	}
 
 }

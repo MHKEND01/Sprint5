@@ -43,11 +43,12 @@
    <top>
       <HBox prefHeight="38.0" prefWidth="524.0" BorderPane.alignment="CENTER">
          <children>
-            <Separator prefHeight="0.0" prefWidth="252.0" />
+            <Button id="comparePlansButton" fx:id="comparePlansButton" mnemonicParsing="false" onAction="#openPlanComparisonSelectionView" prefHeight="26.0" prefWidth="137.0" text="Compare Plans" />
+            <Separator prefHeight="14.0" prefWidth="152.0" visible="false" />
             <Label id="selectPlanLabel" prefHeight="25.0" prefWidth="113.0" text="Select Plan" />
             <Separator prefHeight="0.0" prefWidth="31.0" HBox.hgrow="ALWAYS" />
             <Button id="markEditablePlansButton" fx:id="markEditablePlansButton" mnemonicParsing="false" onAction="#openMarkEditablePlans" prefHeight="26.0" prefWidth="172.0" text="Mark Editable Plans" />
-            <Button id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="78.0" text="Logout" />
+            <Button id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="86.0" text="Logout" />
          </children>
       </HBox>
    </top>
