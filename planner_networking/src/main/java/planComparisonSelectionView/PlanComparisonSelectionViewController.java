@@ -8,6 +8,7 @@ import java.rmi.RemoteException;
 import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -66,7 +67,32 @@ public class PlanComparisonSelectionViewController {
 		}
 		listViewOne.setItems(itemsForListOne);
 		listViewTwo.setItems(itemsForListTwo);
-		
+	}
+	
+	/**
+	 * Resets client's cookie and planFile, displays the login window
+	 * 
+	 * @param event Action
+	 */
+	@FXML
+	public void Logout(ActionEvent event)
+	{
+		try {
+			app.getModel().logout();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		app.showLoginView();
+	}
+	
+	/**
+	 * Change the view back to planSelectionView
+	 */
+	@FXML
+	public void backToPlans()
+	{
+		app.showPlanSelectionView();
+
 	}
 
 }

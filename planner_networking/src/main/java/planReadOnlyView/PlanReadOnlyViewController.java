@@ -24,7 +24,7 @@ public class PlanReadOnlyViewController
 	TextField yearField;
 
 	/**
-	 * Let controller to know view
+	 * Gives controller access to the application, generates the treeView and initializes textfields.
 	 * 
 	 * @param application
 	 */
@@ -70,7 +70,7 @@ public class PlanReadOnlyViewController
 	/**
 	 * Filling the treeview with nodes from business plan
 	 */
-	private void setTreeView()
+	protected void setTreeView()
 	{
 		treeView.rootProperty().setValue(convertTree(model.getCurrPlanFile().getPlan().getRoot()));
 		treeView.getSelectionModel().select(treeView.getRoot());
@@ -97,7 +97,7 @@ public class PlanReadOnlyViewController
 	 * 
 	 * @param item
 	 */
-	private void changeSection()
+	protected void changeSection()
 	{
 		TreeItem<Node> item = treeView.getSelectionModel().getSelectedItem();
 		model.editName(nameField.getText());
@@ -111,7 +111,7 @@ public class PlanReadOnlyViewController
 	/**
 	 * Initializes the year, name, and data text fields.
 	 */
-	private void populateFields()
+	protected void populateFields()
 	{
 		yearField.setText(model.getCurrPlanFile().getYear());
 		nameField.setText(model.getCurrNode().getName());

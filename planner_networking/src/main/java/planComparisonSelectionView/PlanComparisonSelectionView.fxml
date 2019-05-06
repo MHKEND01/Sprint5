@@ -25,8 +25,8 @@
             <Separator prefHeight="1.0" prefWidth="167.0" />
             <Label prefHeight="16.0" prefWidth="384.0" text="Select two plans, then click compare" />
             <Separator prefHeight="0.0" prefWidth="56.0" />
-            <Button id="backToPlansButton" fx:id="backToPlansButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="242.0" text="Back to plans" />
-            <Button id="logoutButton" fx:id="logoutButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="197.0" text="Logout" />
+            <Button id="backToPlansButton" fx:id="backToPlansButton" mnemonicParsing="false" onAction="#backToPlans" prefHeight="26.0" prefWidth="242.0" text="Back to plans" />
+            <Button id="logoutButton" fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="197.0" text="Logout" />
          </children>
       </HBox>
    </top>
