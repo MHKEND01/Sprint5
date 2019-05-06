@@ -13,7 +13,7 @@
          <children>
             <ListView id="listViewOne" fx:id="listViewOne" prefHeight="200.0" prefWidth="200.0" />
             <Separator prefHeight="13.0" prefWidth="28.0" visible="false" />
-            <Button id="comapreButton" fx:id="compareButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Compare" />
+            <Button id="comapreButton" fx:id="compareButton" mnemonicParsing="false" onAction="#compare" prefHeight="26.0" prefWidth="123.0" text="Compare" />
             <Separator prefHeight="8.0" prefWidth="27.0" visible="false" />
             <ListView id="listViewTwo" fx:id="listViewTwo" prefHeight="200.0" prefWidth="200.0" />
          </children>

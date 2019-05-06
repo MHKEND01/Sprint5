@@ -18,9 +18,11 @@ import loginView.LoginViewController;
 import markEditablePlansView.MarkEditablePlansController;
 import planComparisonSelectionView.PlanComparisonSelectionViewController;
 import planEditView.PlanEditViewController;
+import planReadOnlyView.PlanReadOnlyComparisonViewController;
 import planReadOnlyView.PlanReadOnlyViewController;
 import planSelectionView.PlanSelectionViewController;
 import software_masters.model.PlannerModel;
+import software_masters.planner_networking.PlanFile;
 
 /**
  * @author lee.kendall
@@ -201,7 +203,7 @@ public class Main extends Application
 	public void showPlanReadOnlyView()
 	{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("../planReadOnlyView/planReadOnlyView.fxml"));
+		loader.setLocation(Main.class.getResource("../planReadOnlyView/PlanReadOnlyView.fxml"));
 
 		try
 		{
@@ -213,6 +215,38 @@ public class Main extends Application
 		}
 		PlanReadOnlyViewController cont = loader.getController();
 		cont.setApplication(this); // Allows controller to access showPlanSelectionView and showLoginView
+
+		primaryStage.setOnCloseRequest((WindowEvent e) ->
+		{
+			primaryStage.close();
+
+		});
+
+		Scene s = new Scene(mainView);
+		primaryStage.setScene(s);
+		primaryStage.show();
+		primaryStage.sizeToScene();
+	}
+	
+	/**
+	 * Shows the plan read-only view for comparing two plans
+	 */
+	public void showPlanReadOnlyComparisonView(PlanFile viewedPlan, PlanFile comparedPlan)
+	{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../planReadOnlyView/planReadOnlyComparisonView.fxml"));
+
+		try
+		{
+			mainView = loader.load();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		PlanReadOnlyComparisonViewController cont = loader.getController();
+		cont.setApplication(this, viewedPlan, comparedPlan);
+		// Allows controller to access showPlanSelectionView and showLoginView
 
 		primaryStage.setOnCloseRequest((WindowEvent e) ->
 		{

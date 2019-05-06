@@ -94,5 +94,19 @@ public class PlanComparisonSelectionViewController {
 		app.showPlanSelectionView();
 
 	}
+	
+	/**
+	 * Displays a read-only view of the first selected plan, with changes between each node and the
+	 * corresponding node of the second selected plan marked.
+	 */
+	@FXML
+	public void compare()
+	{
+		PlanFile viewedPlan = listViewOne.getSelectionModel().getSelectedItem();
+		PlanFile comparedPlan = listViewTwo.getSelectionModel().getSelectedItem();
+		app.getModel().setCurrPlanFile(viewedPlan);
+		app.showPlanReadOnlyComparisonView(viewedPlan, comparedPlan);
+
+	}
 
 }
