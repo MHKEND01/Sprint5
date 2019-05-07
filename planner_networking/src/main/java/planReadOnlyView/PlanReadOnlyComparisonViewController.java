@@ -111,15 +111,15 @@ public class PlanReadOnlyComparisonViewController extends PlanReadOnlyViewContro
 	{
 		if(differenceDetected(model.getCurrNode()))
 		{
-			comparisonLabel.setText("There is at least one difference between this node and the"
+			comparisonLabel.setText("There is at least one difference between this section and the"
 					+ " corresponding node on the compared plan. This could be a difference in either"
 					+ " section content, section name, or the number of subsections each section has.");
-			comparisonLabel.setStyle("-fx-color: Red");
+			comparisonLabel.setStyle("-fx-text-fill: #ff0000");
 		}
 		else
 		{
 			comparisonLabel.setText("No changes between this plan section and the compared plan section.");
-			comparisonLabel.setStyle("-fx-color: Green");
+			comparisonLabel.setStyle("-fx-text-fill: Green");
 			
 		}
 	}

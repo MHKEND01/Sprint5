@@ -324,7 +324,6 @@ public class ServerImplementation implements Server
 	/**
 	 * Checks that the user is an admin, can return the state to the client
 	 * @param cookie
-	 * @throws RemoteException
 	 */
 	public boolean adminCheckerReturn(String cookie)
 	{

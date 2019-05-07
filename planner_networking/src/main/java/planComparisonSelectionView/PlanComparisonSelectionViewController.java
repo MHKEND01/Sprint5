@@ -102,16 +102,19 @@ public class PlanComparisonSelectionViewController {
 	@FXML
 	public void compare()
 	{
-		PlanFile viewedPlan = listViewOne.getSelectionModel().getSelectedItem();
-		PlanFile comparedPlan = listViewTwo.getSelectionModel().getSelectedItem();
 		try {
+			PlanFile viewedPlan = listViewOne.getSelectionModel().getSelectedItem();
+			PlanFile comparedPlan = listViewTwo.getSelectionModel().getSelectedItem();
 			app.getModel().getPlan(viewedPlan.getYear());
 			viewedPlan = app.getModel().returnPlan(viewedPlan.getYear());
 			comparedPlan = app.getModel().returnPlan(comparedPlan.getYear());
-		} catch (IllegalArgumentException | RemoteException e) {
+			app.showPlanReadOnlyComparisonView(viewedPlan, comparedPlan);
+		}catch(NullPointerException e) {
+			app.sendError("You must select a plan from both lists");
+		}catch (IllegalArgumentException | RemoteException e) {
 			e.printStackTrace();
 		}
-		app.showPlanReadOnlyComparisonView(viewedPlan, comparedPlan);
+
 
 	}
 

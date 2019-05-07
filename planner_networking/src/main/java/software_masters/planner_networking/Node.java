@@ -129,10 +129,6 @@ public class Node implements Serializable {
 			if (other.children != null)
 				return false;
 		} 
-		for(int i=0;i<children.size();i++) {
-			if (!children.get(i).testEquals(other.children.get(i)))
-				return false;
-		}
 		if (data == null)
 		{
 			if (other.data != null)

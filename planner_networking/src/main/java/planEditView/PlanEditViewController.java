@@ -218,7 +218,6 @@ public class PlanEditViewController
 	/**
 	 * Change the nameField and dataField to the content stored in current node
 	 * 
-	 * @param item
 	 */
 	@FXML
 	public void changeSection()
@@ -294,7 +293,6 @@ public class PlanEditViewController
 	 * Asks user if they want to save unsaved changes before leaving the plan edit
 	 * view window for the logout button
 	 * 
-	 * @return result of button press
 	 */
 	public void warningToSaveLogout()
 	{
@@ -335,7 +333,6 @@ public class PlanEditViewController
 	 * Asks user if they want to save unsaved changes before leaving the plan edit
 	 * view window for the back to plans button
 	 * 
-	 * @return result of button press
 	 */
 	public void warningToSaveBackToPlans()
 	{

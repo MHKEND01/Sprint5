@@ -56,7 +56,6 @@ class PlanEditViewTest extends GuiTestBase
 	private void getToPlanEditView()
 	{
 		clickOn("#loginButton");
-		sleep(1000);
 		clickOn((javafx.scene.Node) find("2019"));
 
 	}

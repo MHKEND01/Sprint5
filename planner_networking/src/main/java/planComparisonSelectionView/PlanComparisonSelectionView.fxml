@@ -9,11 +9,11 @@
 
 <BorderPane prefHeight="249.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="planComparisonSelectionView.PlanComparisonSelectionViewController">
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox id="hBox" fx:id="hBox" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <ListView id="listViewOne" fx:id="listViewOne" prefHeight="200.0" prefWidth="200.0" />
             <Separator prefHeight="13.0" prefWidth="28.0" visible="false" />
-            <Button id="comapreButton" fx:id="compareButton" mnemonicParsing="false" onAction="#compare" prefHeight="26.0" prefWidth="123.0" text="Compare" />
+            <Button id="compareButton" fx:id="compareButton" mnemonicParsing="false" onAction="#compare" prefHeight="26.0" prefWidth="123.0" text="Compare" />
             <Separator prefHeight="8.0" prefWidth="27.0" visible="false" />
             <ListView id="listViewTwo" fx:id="listViewTwo" prefHeight="200.0" prefWidth="200.0" />
          </children>
@@ -23,7 +23,7 @@
       <HBox prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="1.0" prefWidth="167.0" />
-            <Label prefHeight="16.0" prefWidth="384.0" text="Select two plans, then click compare" />
+            <Label id="instructionsLabel" fx:id="instructionsLabel" prefHeight="16.0" prefWidth="384.0" text="Select two plans, then click compare" />
             <Separator prefHeight="0.0" prefWidth="56.0" />
             <Button id="backToPlansButton" fx:id="backToPlansButton" mnemonicParsing="false" onAction="#backToPlans" prefHeight="26.0" prefWidth="242.0" text="Back to plans" />
             <Button id="logoutButton" fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="197.0" text="Logout" />

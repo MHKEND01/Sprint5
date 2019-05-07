@@ -32,6 +32,7 @@ class MarkEditablePlansTest extends GuiTestBase {
 	{
 		adminTest();
 		userTest();
+		cleanUp();
 	}
 	
 	/**
@@ -106,7 +107,7 @@ class MarkEditablePlansTest extends GuiTestBase {
 		clickOn("Back to plans");
 		
 		clickOn("2020");//will result in error if plan selection listview not updated correctly
-		//Verifies that opening the 2020 plan now displays an editabl view, by checking for presence
+		//Verifies that opening the 2020 plan now displays an editable view, by checking for presence
 		//of the delete button only found in the plan edit view.
 		verify("#deleteSectionButton","Delete Section");
 		
@@ -148,6 +149,20 @@ class MarkEditablePlansTest extends GuiTestBase {
 		verify("#logoutButton","Logout");
 		verifyThat("#instructionsLabel", 
 		LabeledMatchers.hasText("Select a plan, then mark it as editable or read-only"));
+	}
+	
+	/**
+	 *Resets plan permissions so the original PlanEditTest works correctly 
+	 */
+	private void cleanUp()
+	{
+		clickOn("Log Out");
+		loginAsAdmin();
+		clickOn("Mark Editable Plans");
+		clickOn("2019 Read Only");
+		clickOn("Mark as Editable");
+		
+		
 	}
 
 }

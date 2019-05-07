@@ -60,7 +60,6 @@ public class PlanSelectionViewController
 	/**
 	 * This method generates a list view of developer templates
 	 * 
-	 * @return
 	 */
 	public void genTemplateList()
 	{
@@ -80,7 +79,6 @@ public class PlanSelectionViewController
 	/**
 	 * This method generates a list view of plans associated with the user's department
 	 * 
-	 * @return
 	 */
 	public void genPlansList()
 	{

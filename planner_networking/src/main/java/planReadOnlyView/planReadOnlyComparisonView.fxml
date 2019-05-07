@@ -24,7 +24,7 @@
                   <TextField id="contentField" fx:id="dataField" alignment="TOP_LEFT" editable="false" maxHeight="1.7976931348623157E308" prefHeight="372.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
-                  <Label id="comparisonLabel" fx:id="comparisonLabel" prefHeight="52.0" prefWidth="459.0" text="No changes between this plan section and the compared plan section." textFill="#51ae00" BorderPane.alignment="CENTER" />
+                  <Label id="comparisonLabel" fx:id="comparisonLabel" prefHeight="52.0" prefWidth="489.0" text="There is at least one difference between this node and the corresponding node on the compared plan. This could be a difference in either section content, section name, or the number of subsections each section has." textFill="RED" wrapText="true" BorderPane.alignment="CENTER" />
                </bottom>
             </BorderPane>
          </center>

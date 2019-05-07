@@ -107,7 +107,6 @@ public interface Server extends Remote
 	/**
 	 * Serializes server to xml
 	 * 
-	 * @throws FileNotFoundException
 	 */
 	void save() throws RemoteException;
 

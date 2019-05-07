@@ -63,7 +63,6 @@ public class Client
 	 * 
 	 * @param username
 	 * @param password
-	 * @return
 	 * @throws IllegalArgumentException
 	 */
 	public void login(String username, String password) throws IllegalArgumentException, RemoteException
@@ -98,7 +97,6 @@ public class Client
 	 * exception if that planFile doesn't exist.
 	 * 
 	 * @param year
-	 * @return
 	 * @throws IllegalArgumentException
 	 */
 	public void getPlan(String year) throws IllegalArgumentException, RemoteException
@@ -121,7 +119,6 @@ public class Client
 	 * outline doesn't exist.
 	 * 
 	 * @param name
-	 * @return
 	 * @throws IllegalArgumentException
 	 */
 	public void getPlanOutline(String name) throws IllegalArgumentException, RemoteException

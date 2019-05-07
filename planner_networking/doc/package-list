@@ -1,1 +1,11 @@
+application
+loginView
+markEditablePlansView
+planComparisonSelectionView
+planEditView
+planReadOnlyView
+planSelectionView
+serverConnectionView
+software_masters.gui_test
+software_masters.model
 software_masters.planner_networking
